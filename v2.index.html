@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="A modern platform for ESG, carbon emission, and sustainability resources"/>
+  <title>CARBON • ESG • SUSTAINABILITY</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body { font-family:'Poppins',sans-serif; background:#f8f9fa; margin:0; padding:0; }
+    .gradient-text { background:linear-gradient(90deg,#34D399,#3B82F6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    header { background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.1); position:sticky; top:0; z-index:10; padding:1rem 0; }
+    .container { width:100%; max-width:1200px; margin:0 auto; padding:0 15px; }
+    h1,h2,h3 { margin:0; }
+    .tabs { display:flex; justify-content:center; gap:1rem; margin:2rem 0; flex-wrap:wrap; }
+    .tab-btn { padding:.5rem 1rem; border:1px solid #e5e7eb; border-radius:.5rem; background:#fff; cursor:pointer; transition:.2s; }
+    .tab-btn:hover { background:#f3f4f6; }
+    .tab-active { background:#16a34a; color:#fff; border-color:#16a34a; }
+    main > section { display:none; }
+    main > section.active { display:block; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+    .card { background:#fff; border-radius:.75rem; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); transition:.3s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.08); }
+    .card .icon { height:160px; background:#f1f5f9 center/contain no-repeat; }
+    .card .body { padding:1.25rem; }
+    .card h3 { font-size:1.125rem; margin-bottom:.5rem; }
+    .card p { font-size:.875rem; color:#4b5563; margin-bottom:.75rem; }
+    .card a { font-weight:500; text-decoration:none; color:#059669; }
+    .card a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex; align-items:center;">
+      <div style="width:2.5rem; height:2.5rem; border-radius:50%; background:linear-gradient(to right,#34d399,#3b82f6); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:600; margin-right:.75rem;">S</div>
+      <h1 class="gradient-text" style="font-size:1.5rem;">CARBON • ESG • SUSTAINABILITY</h1>
+    </div>
+  </header>
+
+  <section class="container">
+    <div class="tabs">
+      <button class="tab-btn tab-active" onclick="showSection('carbon')">Carbon Emission Database</button>
+      <button class="tab-btn" onclick="showSection('esg')">ESG Resources</button>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Carbon Emission Database -->
+    <section id="carbon" class="active">
+      <h2 style="margin-bottom:1rem;">碳排放数据库</h2>
+      <div class="grid">
+        <!-- CEADs -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.ceads.net.cn&sz=128');"></div>
+          <div class="body">
+            <h3>中国碳核算数据库（CEADs）</h3>
+            <p>多尺度碳核算清单及社会经济与贸易数据库。</p>
+            <a href="https://www.ceads.net.cn/data/" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- MEIC -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=meicmodel.org&sz=128');"></div>
+          <div class="body">
+            <h3>中国多尺度排放清单模型（MEIC）</h3>
+            <p>基于云平台的大气污染物和温室气体排放模型。</p>
+            <a href="http://meicmodel.org/?page_id=560" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- Carbon Monitor -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.carbonmonitor.org.cn&sz=128');"></div>
+          <div class="body">
+            <h3>全球实时碳数据（Carbon Monitor）</h3>
+            <p>电力、工业等部门高分辨率排放活动数据。</p>
+            <a href="http://www.carbonmonitor.org.cn" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- World Bank -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=data.worldbank.org.cn&sz=128');"></div>
+          <div class="body">
+            <h3>世界银行（WB）数据库</h3>
+            <p>全球可持续发展相关数据与知识。</p>
+            <a href="https://data.worldbank.org.cn/indicator/EN.ATM.CO2E.KT?view=chart" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- IEA -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.iea.org&sz=128');"></div>
+          <div class="body">
+            <h3>国际能源署（IEA）</h3>
+            <p>国际石油市场及其他能源领域统计情报。</p>
+            <a href="https://www.iea.org/data-and-statistics/data-product/world-energy-outlook-2021-free-dataset" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- EDGAR -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=data.jrc.ec.europa.eu&sz=128');"></div>
+          <div class="body">
+            <h3>EDGAR（PBL）</h3>
+            <p>全球人为排放和趋势的独立估计。</p>
+            <a href="https://data.jrc.ec.europa.eu/collection/edgar" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- Global Carbon Budget -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.icos-cp.eu&sz=128');"></div>
+          <div class="body">
+            <h3>全球碳预算数据库（GCB）</h3>
+            <p>详细描述全球碳循环的数据集与模型结果。</p>
+            <a href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- WRI Climate Watch -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=wri.org.cn&sz=128');"></div>
+          <div class="body">
+            <h3>世界资源研究所气候观察（WRI）</h3>
+            <p>提供客观分析和政策决策支持。</p>
+            <a href="https://wri.org.cn/data" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- U.S. EIA -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.eia.gov&sz=128');"></div>
+          <div class="body">
+            <h3>美国能源信息管理局（EIA）</h3>
+            <p>全球能源领域数据统计与分析。</p>
+            <a href="https://www.eia.gov/international/data/world" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- BP -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.bp.com&sz=128');"></div>
+          <div class="body">
+            <h3>英国石油公司（BP）数据库</h3>
+            <p>全球能源相关形势分析和数据。</p>
+            <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- CDIAC -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=cdiac.ess-dive.lbl.gov&sz=128');"></div>
+          <div class="body">
+            <h3>CDIAC</h3>
+            <p>与温室效应和全球气候变化相关的 CO₂ 数据。</p>
+            <a href="https://cdiac.ess-dive.lbl.gov" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- JRC -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=joint-research-centre.ec.europa.eu&sz=128');"></div>
+          <div class="body">
+            <h3>欧盟委员会联合研究中心（JRC）</h3>
+            <p>为欧盟政策提供独立科学支持。</p>
+            <a href="https://data.europa.eu/en" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- UNFCCC -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=unfccc.int&sz=128');"></div>
+          <div class="body">
+            <h3>联合国气候变化框架公约（UNFCCC）</h3>
+            <p>提供《UNFCCC》相关年度报告数据。</p>
+            <a href="https://unfccc.int/annualreport" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- Climate Watch -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.climatewatchdata.org&sz=128');"></div>
+          <div class="body">
+            <h3>Climate Watch</h3>
+            <p>公开气候数据、可视化和资源。</p>
+            <a href="https://www.climatewatchdata.org/da" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESG Resources -->
+    <section id="esg">
+      <h2 style="margin-bottom:1rem;">ESG 资源</h2>
+      <div class="grid">
+        <!-- ESG Academ -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=matters.academy&sz=128');"></div>
+          <div class="body">
+            <h3>ESG Academ</h3>
+            <p>五大 ESG 与可持续学习平台推荐。</p>
+            <a href="https://www.matters.academy/blog/five-platforms-for-esg-and-sustainability-learning" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- UN CC:Learn -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=unccelearn.org&sz=128');"></div>
+          <div class="body">
+            <h3>UN CC:Learn</h3>
+            <p>联合国气候变化学习伙伴计划。</p>
+            <a href="https://unccelearn.org/" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- ESG Channel -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=esgchannel.com&sz=128');"></div>
+          <div class="body">
+            <h3>ESG Channel</h3>
+            <p>ESG 深度解读与案例分享。</p>
+            <a href="https://www.esgchannel.com/" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- ESG Investing -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=esginvesting.co.uk&sz=128');"></div>
+          <div class="body">
+            <h3>ESG Investing</h3>
+            <p>ESG 投资新闻和见解。</p>
+            <a href="https://www.esginvesting.co.uk/" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- UNPRI -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=unpri.org&sz=128');"></div>
+          <div class="body">
+            <h3>UNPRI</h3>
+            <p>责任投资原则倡议组织。</p>
+            <a href="https://www.unpri.org/" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- ESG Clarity -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=esgclarity.com&sz=128');"></div>
+          <div class="body">
+            <h3>ESG Clarity</h3>
+            <p>ESG 评级与报告深度解读。</p>
+            <a href="https://esgclarity.com/" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+        <!-- GreenBiz -->
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=greenbiz.com&sz=128');"></div>
+          <div class="body">
+            <h3>GreenBiz</h3>
+            <p>可持续商业新闻与趋势。</p>
+            <a href="https://www.greenbiz.com/" target="_blank">访问 &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showSection(id) {
+      // 切换部分
+      document.querySelectorAll('main > section').forEach(sec => {
+        sec.classList.toggle('active', sec.id === id);
+      });
+      // 切换按钮高亮
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('tab-active', btn.textContent.trim().includes(id==='carbon'?'Carbon Emission':'ESG'));
+      });
+    }
+  </script>
+</body>
+</html>
