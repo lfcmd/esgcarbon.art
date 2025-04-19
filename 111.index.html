@@ -13,12 +13,18 @@
     .container { width:100%; max-width:1200px; margin:0 auto; padding:0 15px; display:flex; align-items:center; }
     h1,h2,h3 { margin:0; }
     .tabs { display:flex; justify-content:center; gap:1rem; margin:1rem 0; flex-wrap:wrap; }
-    .tab-btn { padding:.5rem 1rem; border:1px solid #e5e7eb; border-radius:.5rem; background:#fff; cursor:pointer; transition:.2s; position:relative; }
+    .tab-btn { padding:.5rem 1rem; border:1px solid #e5e7eb; border-radius:.5rem; background:#fff; cursor:pointer; transition:.2s; }
     .tab-btn:hover { background:#f3f4f6; }
     .tab-active { background:#16a34a; color:#fff; border-color:#16a34a; }
     main > section { display:none; }
     main > section.active { display:block; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; padding-bottom:2rem; }
+    /* —— 固定4列布局 —— */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+    }
     .card { background:#fff; border-radius:.75rem; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); transition:.3s; }
     .card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.08); }
     .card .icon { height:160px; background:#f1f5f9 center/contain no-repeat; }
@@ -27,12 +33,13 @@
     .card p { font-size:.875rem; color:#4b5563; margin-bottom:.75rem; }
     .card a { font-weight:500; text-decoration:none; color:#059669; }
     .card a:hover { text-decoration:underline; }
-    /* language switch */
+    /* 语言切换 */
     html[lang="zh-CN"] .en { display: none; }
     html[lang="en"] .zh { display: none; }
     .lang-switch { margin-left:auto; }
     .lang-switch button { margin-left:0.5rem; padding:0.3rem 0.6rem; border:none; background:#e5e7eb; border-radius:0.3rem; cursor:pointer; }
     .lang-switch button:hover { background:#d1d5db; }
+    footer { background:#fff; text-align:center; padding:1rem 0; margin-top:2rem; font-size:.875rem; }
   </style>
 </head>
 <body>
@@ -40,7 +47,10 @@
     <div class="container">
       <div style="display:flex; align-items:center;">
         <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:linear-gradient(to right,#34d399,#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;margin-right:.75rem;">S</div>
-        <h1 class="gradient-text"><span class="zh">CARBON • ESG • SUSTAINABILITY</span><span class="en">CARBON • ESG • SUSTAINABILITY</span></h1>
+        <h1 class="gradient-text">
+          <span class="zh">CARBON • ESG • 可持续发展</span>
+          <span class="en">CARBON • ESG • SUSTAINABILITY</span>
+        </h1>
       </div>
       <div class="lang-switch">
         <button onclick="setLang('zh-CN')">中文</button>
@@ -75,9 +85,8 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.ceads.net.cn&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">中国碳核算数据库（CEADs）</span><span class="en">China Emissions Accounting Database (CEADs)</span></h3>
-            <p><span class="zh">涵盖中国及其他发展中经济体的多尺度碳核算清单及社会经济与贸易数据库。</span>
-               <span class="en">Multi-scale carbon accounting inventory and socio-economic & trade database for China and other developing economies.</span></p>
-            <a href="https://www.ceads.net.cn/data/" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">涵盖中国及其他发展中经济体的多尺度碳核算清单及社会经济与贸易数据库。</span><span class="en">Multi-scale carbon accounting inventory and socio-economic & trade database for China and other developing economies.</span></p>
+            <a href="https://www.ceads.net.cn/data/" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- MEIC -->
@@ -85,29 +94,26 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=meicmodel.org&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">中国多尺度排放清单模型（MEIC）</span><span class="en">Multi-scale Emission Inventory for China (MEIC)</span></h3>
-            <p><span class="zh">基于云平台的大气污染物和温室气体排放模型。</span>
-               <span class="en">A cloud-based model for atmospheric pollutant and GHG emission inventories.</span></p>
-            <a href="http://meicmodel.org/?page_id=560" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">基于云计算平台开发的中国大气污染物和温室气体人为源排放清单模型。</span><span class="en">Cloud-based model for air pollutants and GHG emission inventory in China.</span></p>
+            <a href="http://meicmodel.org/?page_id=560" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- Carbon Monitor -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.carbonmonitor.org.cn&sz=128');"></div>
           <div class="body">
-            <h3><span class="zh">全球实时碳数据（Carbon Monitor）</span><span class="en">Global Real‑time Carbon Data (Carbon Monitor)</span></h3>
-            <p><span class="zh">提供全球电力、工业等部门排放的高分辨率活动数据。</span>
-               <span class="en">High‑resolution activity data for power, industry and more worldwide.</span></p>
-            <a href="http://www.carbonmonitor.org.cn" target="_blank">访问 &rarr; / View →</a>
+            <h3><span class="zh">全球实时碳数据（Carbon Monitor）</span><span class="en">Carbon Monitor</span></h3>
+            <p><span class="zh">提供全球电力、工业等部门排放的高分辨率活动数据。</span><span class="en">High-resolution sectoral emissions data worldwide.</span></p>
+            <a href="http://www.carbonmonitor.org.cn" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- World Bank -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=data.worldbank.org.cn&sz=128');"></div>
           <div class="body">
-            <h3><span class="zh">世界银行（WB）数据库</span><span class="en">World Bank (WB) Database</span></h3>
-            <p><span class="zh">全球可持续发展相关的数据和知识。</span>
-               <span class="en">Global sustainable development data and insights.</span></p>
-            <a href="https://data.worldbank.org.cn/indicator/EN.ATM.CO2E.KT?view=chart" target="_blank">访问 &rarr; / View →</a>
+            <h3><span class="zh">世界银行（WB）数据库</span><span class="en">World Bank Database</span></h3>
+            <p><span class="zh">提供全球可持续发展相关的数据和知识。</span><span class="en">Global sustainable development data and knowledge.</span></p>
+            <a href="https://data.worldbank.org.cn/indicator/EN.ATM.CO2E.KT?view=chart" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- IEA -->
@@ -115,9 +121,8 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.iea.org&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">国际能源署（IEA）</span><span class="en">International Energy Agency (IEA)</span></h3>
-            <p><span class="zh">国际石油市场及其他能源领域统计情报。</span>
-               <span class="en">Statistics and analysis for global oil markets and other energy sectors.</span></p>
-            <a href="https://www.iea.org/data-and-statistics/data-product/world-energy-outlook-2021-free-dataset" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">提供国际石油市场及其他能源领域的统计情报。</span><span class="en">Statistics and intelligence on international energy markets.</span></p>
+            <a href="https://www.iea.org/data-and-statistics/data-product/world-energy-outlook-2021-free-dataset" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- EDGAR -->
@@ -125,9 +130,8 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=data.jrc.ec.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">EDGAR（PBL）</span><span class="en">EDGAR (PBL)</span></h3>
-            <p><span class="zh">全球人为排放和趋势的独立估计。</span>
-               <span class="en">Independent estimates of global anthropogenic emissions and trends.</span></p>
-            <a href="https://data.jrc.ec.europa.eu/collection/edgar" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">提供全球人为排放和排放趋势的独立估计数。</span><span class="en">Independent estimates of global anthropogenic emissions and trends.</span></p>
+            <a href="https://data.jrc.ec.europa.eu/collection/edgar" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- GCB -->
@@ -135,9 +139,8 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.icos-cp.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">全球碳预算数据库（GCB）</span><span class="en">Global Carbon Budget (GCB)</span></h3>
-            <p><span class="zh">详细描述全球碳循环的数据集与模型结果。</span>
-               <span class="en">Datasets and model results describing the global carbon cycle.</span></p>
-            <a href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">详细描述全球碳循环的数据集和模型结果。</span><span class="en">Datasets and model results describing the global carbon cycle.</span></p>
+            <a href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- WRI Climate Watch -->
@@ -145,9 +148,8 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=wri.org.cn&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">世界资源研究所气候观察（WRI）</span><span class="en">WRI Climate Watch</span></h3>
-            <p><span class="zh">提供客观分析和政策决策支持。</span>
-               <span class="en">Objective analyses and policy support on climate data.</span></p>
-            <a href="https://wri.org.cn/data" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">提供客观分析和政策决策参与。</span><span class="en">Objective analysis and policy engagement.</span></p>
+            <a href="https://wri.org.cn/data" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- EIA -->
@@ -155,19 +157,17 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.eia.gov&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">美国能源信息管理局（EIA）</span><span class="en">U.S. Energy Information Administration (EIA)</span></h3>
-            <p><span class="zh">全球能源领域数据统计与分析。</span>
-               <span class="en">Data and analysis for global energy markets.</span></p>
-            <a href="https://www.eia.gov/international/data/world" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">提供能源领域的数据统计和分析。</span><span class="en">Energy data statistics and analysis.</span></p>
+            <a href="https://www.eia.gov/international/data/world" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- BP -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.bp.com&sz=128');"></div>
           <div class="body">
-            <h3><span class="zh">英国石油公司（BP）数据库</span><span class="en">BP Statistical Review of World Energy</span></h3>
-            <p><span class="zh">全球能源相关形势分析和数据。</span>
-               <span class="en">Analysis and data on global energy trends.</span></p>
-            <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html" target="_blank">访问 &rarr; / View →</a>
+            <h3><span class="zh">英国石油公司（BP）数据库</span><span class="en">BP Statistical Review</span></h3>
+            <p><span class="zh">提供全球能源相关形势分析和能源相关数据。</span><span class="en">Global energy trends and data.</span></p>
+            <a href="https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- CDIAC -->
@@ -175,9 +175,8 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=cdiac.ess-dive.lbl.gov&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">CDIAC</span><span class="en">Carbon Dioxide Information Analysis Center (CDIAC)</span></h3>
-            <p><span class="zh">与温室效应和全球气候变化相关的 CO₂ 数据。</span>
-               <span class="en">CO₂ data related to greenhouse effect and climate change.</span></p>
-            <a href="https://cdiac.ess-dive.lbl.gov" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">提供与温室效应和全球气候变化相关的数据。</span><span class="en">Data related to greenhouse effect and climate change.</span></p>
+            <a href="https://cdiac.ess-dive.lbl.gov" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- JRC -->
@@ -185,9 +184,8 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=joint-research-centre.ec.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">欧盟委员会联合研究中心（JRC）</span><span class="en">EU Joint Research Centre (JRC)</span></h3>
-            <p><span class="zh">为欧盟政策提供独立科学支持。</span>
-               <span class="en">Independent scientific advice for EU policy.</span></p>
-            <a href="https://data.europa.eu/en" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">提供欧盟政策制定过程中的独立政策支持。</span><span class="en">Independent policy support for EU decision-making.</span></p>
+            <a href="https://data.europa.eu/en" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- UNFCCC -->
@@ -195,19 +193,17 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=unfccc.int&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">联合国气候变化框架公约（UNFCCC）</span><span class="en">UN Framework Convention on Climate Change (UNFCCC)</span></h3>
-            <p><span class="zh">提供公约相关年度报告数据。</span>
-               <span class="en">Annual report data under the UNFCCC.</span></p>
-            <a href="https://unfccc.int/annualreport" target="_blank">访问 &rarr; / View →</a>
+            <p><span class="zh">提供《UNFCCC》相关的年度报告数据。</span><span class="en">Annual report data under the UNFCCC.</span></p>
+            <a href="https://unfccc.int/annualreport" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
         <!-- Climate Watch -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.climatewatchdata.org&sz=128');"></div>
           <div class="body">
-            <h3><span class="zh">Climate Watch</span><span class="en">Climate Watch</span></h3>
-            <p><span class="zh">公开气候数据、可视化和资源。</span>
-               <span class="en">Open climate data, visualizations and resources.</span></p>
-            <a href="https://www.climatewatchdata.org/da" target="_blank">访问 &rarr; / View →</a>
+            <h3><span class="zh">气候观察（Climate Watch）</span><span class="en">Climate Watch</span></h3>
+            <p><span class="zh">提供公开气候数据、可视化和资源。</span><span class="en">Open climate data, visualizations and resources.</span></p>
+            <a href="https://www.climatewatchdata.org/da" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
       </div>
@@ -217,74 +213,53 @@
     <section id="esg">
       <h2><span class="zh">ESG 资源</span><span class="en">ESG Resources</span></h2>
       <div class="grid">
-        <!-- ESG Academ -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=matters.academy&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">ESG Academ</span><span class="en">ESG Academ</span></h3>
-            <p><span class="zh">五大 ESG 与可持续学习平台推荐。</span>
-               <span class="en">Five platforms for ESG and sustainability learning.</span></p>
-            <a href="https://www.matters.academy/blog/five-platforms-for-esg-and-sustainability-learning" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.matters.academy/blog/five-platforms-for-esg-and-sustainability-learning" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
-        <!-- UN CC:Learn -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=unccelearn.org&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">UN CC:Learn</span><span class="en">UN CC:Learn</span></h3>
-            <p><span class="zh">联合国气候变化学习伙伴计划。</span>
-               <span class="en">UN Climate Change learning partnership.</span></p>
-            <a href="https://unccelearn.org/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://unccelearn.org/" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
-        <!-- ESG Channel -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=esgchannel.com&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">ESG Channel</span><span class="en">ESG Channel</span></h3>
-            <p><span class="zh">ESG 深度解读与案例分享。</span>
-               <span class="en">In‑depth ESG insights and case studies.</span></p>
-            <a href="https://www.esgchannel.com/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.esgchannel.com/" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
-        <!-- ESG Investing -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=esginvesting.co.uk&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">ESG Investing</span><span class="en">ESG Investing</span></h3>
-            <p><span class="zh">ESG 投资新闻和见解。</span>
-               <span class="en">ESG investment news and insights.</span></p>
-            <a href="https://www.esginvesting.co.uk/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.esginvesting.co.uk/" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
-        <!-- UNPRI -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=unpri.org&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">UNPRI</span><span class="en">UNPRI</span></h3>
-            <p><span class="zh">责任投资原则倡议组织。</span>
-               <span class="en">Principles for Responsible Investment.</span></p>
-            <a href="https://www.unpri.org/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.unpri.org/" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
-        <!-- ESG Clarity -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=esgclarity.com&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">ESG Clarity</span><span class="en">ESG Clarity</span></h3>
-            <p><span class="zh">ESG 评级与报告深度解读。</span>
-               <span class="en">Deep dives on ESG ratings and reporting.</span></p>
-            <a href="https://esgclarity.com/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://esgclarity.com/" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
-        <!-- GreenBiz -->
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=greenbiz.com&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">GreenBiz</span><span class="en">GreenBiz</span></h3>
-            <p><span class="zh">可持续商业新闻与趋势。</span>
-               <span class="en">Sustainable business news and trends.</span></p>
-            <a href="https://www.greenbiz.com/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.greenbiz.com/" target="_blank"><span class="zh">访问 &rarr;</span><span class="en">View →</span></a>
           </div>
         </div>
       </div>
@@ -298,77 +273,70 @@
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=commission.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">欧盟委员会</span><span class="en">European Commission</span></h3>
-            <a href="https://commission.europa.eu/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://commission.europa.eu/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=eex.com&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">欧洲能源交易所（EEX）</span><span class="en">European Energy Exchange (EEX)</span></h3>
-            <a href="https://www.eex.com/en/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.eex.com/en/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=theice.com&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">ICE 洲际交易所</span><span class="en">ICE – Intercontinental Exchange</span></h3>
-            <a href="https://www.theice.com/index" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.theice.com/index" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=european-union.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">欧盟</span><span class="en">European Union</span></h3>
-            <a href="https://european-union.europa.eu/index_en" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://european-union.europa.eu/index_en" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=europarl.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">欧洲议会</span><span class="en">European Parliament</span></h3>
-            <a href="https://www.europarl.europa.eu/portal/en" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.europarl.europa.eu/portal/en" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=www.consilium.europa.eu&sz=128');"></div>
+          <div class="body">
+            <h3><span class="zh">欧盟理事会</span><span class="en">Council of the EU</span></h3>
+            <a href="https://www.consilium.europa.eu/en/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=consilium.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">欧洲理事会</span><span class="en">European Council</span></h3>
-            <a href="https://www.consilium.europa.eu/zh/" target="_blank">访问 &rarr; / View →</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=commission.europa.eu&sz=128');"></div>
-          <div class="body">
-            <h3><span class="zh">欧盟委员会（中文）</span><span class="en">European Commission (ZH)</span></h3>
-            <a href="https://commission.europa.eu/index_zh" target="_blank">访问 &rarr; / View →</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=consilium.europa.eu&sz=128');"></div>
-          <div class="body">
-            <h3><span class="zh">欧洲理事会（中文）</span><span class="en">European Council (ZH)</span></h3>
-            <a href="https://www.consilium.europa.eu/zh/hu/european-council/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.consilium.europa.eu/en/european-council/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=taxation-customs.ec.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">碳边境调节机制（CBAM）</span><span class="en">Carbon Border Adjustment Mechanism (CBAM)</span></h3>
-            <a href="https://taxation-customs.ec.europa.eu/zh/carbon-border-adjustment-mechanism" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=commission.europa.eu&sz=128');"></div>
           <div class="body">
             <h3><span class="zh">欧洲绿色新政</span><span class="en">European Green Deal</span></h3>
-            <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.google.com/s2/favicons?domain=eur-lex.europa.eu&sz=128');"></div>
           <div class="body">
-            <h3><span class="zh">欧盟法规（EUR-Lex）</span><span class="en">EU Law (EUR-Lex)</span></h3>
-            <a href="https://eur-lex.europa.eu/homepage.html" target="_blank">访问 &rarr; / View →</a>
+            <h3><span class="zh">欧盟法规（EUR-Lex）</span><span class="en">EU Law (EUR‑Lex)</span></h3>
+            <a href="https://eur-lex.europa.eu/homepage.html" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
       </div>
@@ -381,69 +349,64 @@
         <div class="card">
           <div class="icon" style="background-image:url('http://lca.cityghg.com/favicon.ico');"></div>
           <div class="body">
-            <h3><span class="zh">中国产品全生命周期温室气体排放系数库</span><span class="en">China Products Carbon Footprint Factors Database</span></h3>
-            <a href="http://lca.cityghg.com/" target="_blank">访问 &rarr; / View →</a>
+            <h3><span class="zh">中国产品全生命周期温室气体排放系数库</span><span class="en">China Products Carbon Footprint Database</span></h3>
+            <a href="http://lca.cityghg.com/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://oneclicklca.com/favicon.ico');"></div>
           <div class="body">
             <h3><span class="zh">One Click LCA</span><span class="en">One Click LCA</span></h3>
-            <a href="https://oneclicklca.com/zh/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://oneclicklca.com/zh/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.tiangong.earth/favicon.ico');"></div>
           <div class="body">
             <h3><span class="zh">天工计划</span><span class="en">Tiangong Plan</span></h3>
-            <a href="https://www.tiangong.earth/zh" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.tiangong.earth/zh" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://sphera.com/favicon.ico');"></div>
           <div class="body">
             <h3><span class="zh">Gabi</span><span class="en">Gabi LCA Software</span></h3>
-            <a href="https://sphera.com/solutions/product-stewardship/life-cycle-assessment-software-and-data/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://sphera.com/solutions/product-stewardship/life-cycle-assessment-software-and-data/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://ecoinvent.org/favicon.ico');"></div>
           <div class="body">
             <h3><span class="zh">Ecoinvent</span><span class="en">Ecoinvent</span></h3>
-            <a href="https://ecoinvent.org/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://ecoinvent.org/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://www.openlca.org/favicon.ico');"></div>
           <div class="body">
             <h3><span class="zh">OpenLCA</span><span class="en">OpenLCA</span></h3>
-            <a href="https://www.openlca.org/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://www.openlca.org/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
         <div class="card">
           <div class="icon" style="background-image:url('https://simapro.com/favicon.ico');"></div>
           <div class="body">
             <h3><span class="zh">SimaPro</span><span class="en">SimaPro</span></h3>
-            <a href="https://simapro.com/" target="_blank">访问 &rarr; / View →</a>
+            <a href="https://simapro.com/" target="_blank"><span class="zh">访问</span><span class="en">View</span> →</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <footer>
+    <span class="zh">联系邮箱：</span><span class="en">Contact:</span> <a href="mailto:fan405141@gmail.com">fan405141@gmail.com</a>
+  </footer>
+
   <script>
     function showSection(id) {
-      document.querySelectorAll('main > section').forEach(sec => {
-        sec.classList.toggle('active', sec.id === id);
-      });
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.toggle('tab-active',
-          (btn.textContent.includes(id==='carbon'? (document.documentElement.lang==='zh-CN'? '碳排放数据库':'Carbon Emission Database') :
-           id==='esg'? (document.documentElement.lang==='zh-CN'? 'ESG 资源':'ESG Resources') :
-           id==='eu'? (document.documentElement.lang==='zh-CN'? '欧盟机构及法规':'EU Institutions & Regulations') :
-           '生命周期评价' // fallback zh text
-          )));
-      });
+      document.querySelectorAll('main > section').forEach(sec => sec.classList.toggle('active', sec.id === id));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('tab-active', btn.onclick.toString().includes(`'${id}'`)));
     }
     function setLang(lang) {
       document.documentElement.lang = lang;
@@ -451,4 +414,3 @@
   </script>
 </body>
 </html>
-
